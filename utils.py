@@ -23,13 +23,12 @@ class StockData:
         #get stock price data from yahoo finance
         data = yf.download(tickers=ticker_symbols, start=start, end=end, interval=interval)
         current_time = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S %Z")
-
         return data, current_time
 
     @staticmethod
     def calculate_returns(data, ticker):
         # calculate weekly or monthly return
-        return data['Adj Close'][ticker].pct_change(1)
+        return data['Close'][ticker].pct_change(1)
 
     @classmethod
     def stock_return(cls, data, ticker_symbols, index_name):

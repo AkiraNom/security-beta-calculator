@@ -1,9 +1,5 @@
 import streamlit as st
-import yfinance as yf
-import pandas as pd
 import utils
-import datetime
-import plotly.graph_objects as go
 
 st.set_page_config(
     page_title='Beta estimation',
